@@ -44,7 +44,9 @@ module.exports = function toReadable (number) {
   if (numbersBefore20.has(Number(numberString).toString())) {
     resultArray.push(numbersBefore20.get(Number(numberString).toString()));
   } else {
-    resultArray.push(tens.get(numberString[0]));
+    if (numberString[0] !== '0') {
+      resultArray.push(tens.get(numberString[0]));
+    }
     if (numberString[1] !== '0') {
       resultArray.push(numbersBefore20.get(numberString[1]));
     }
