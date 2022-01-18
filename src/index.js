@@ -1,8 +1,4 @@
 module.exports = function toReadable (number) {
-    
-}
-
-function toReadable (number) {
   const numbersBefore20 = new Map([
     ['0', 'zero'],
     ['1', 'one'],
@@ -54,8 +50,4 @@ function toReadable (number) {
   }
 
   return resultArray.join(' ');
-}
-
-for (let i = 0; i < 100; i++) {
-    console.log(`${i} = ${toReadable(i)}`)
 }
