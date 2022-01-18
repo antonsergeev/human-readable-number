@@ -1,6 +1,9 @@
 module.exports = function toReadable (number) {
+    
+}
+
+function toReadable (number) {
   const numbersBefore20 = new Map([
-    ['0', 'zero'],
     ['1', 'one'],
     ['2', 'two'],
     ['3', 'three'],
@@ -34,6 +37,8 @@ module.exports = function toReadable (number) {
 
   let numberString = number.toString();
   let resultArray = []
+  
+  if (numberString === '0') return 'zero';
 
   if (numberString.length === 3) {
     resultArray.push(`${numbersBefore20.get(numberString[0])} hundred`);
@@ -50,4 +55,8 @@ module.exports = function toReadable (number) {
   }
 
   return resultArray.join(' ');
+}
+
+for (let i = 0; i < 1000; i++) {
+    console.log(`${i} = ${toReadable(i)}`)
 }
